@@ -6,6 +6,21 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		473A21831A5D0CD4001ED77E /* Documentation */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 473A21841A5D0CD5001ED77E /* Build configuration list for PBXAggregateTarget "Documentation" */;
+			buildPhases = (
+				473A21921A5D0DC3001ED77E /* ShellScript */,
+			);
+			dependencies = (
+				473A21911A5D0DC0001ED77E /* PBXTargetDependency */,
+			);
+			name = Documentation;
+			productName = Documentation;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		220526BA165E8C9D00A2BBC9 /* FTPAuthenticationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 220526B9165E8C9D00A2BBC9 /* FTPAuthenticationTests.m */; };
 		220526F8165E9DE400A2BBC9 /* DAVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27448C371458100D00EB086F /* DAVKit.framework */; };
@@ -226,6 +241,27 @@
 			remoteGlobalIDString = 279117EA178B5C64006BF857;
 			remoteInfo = ConnectionKitUI;
 		};
+		473A218C1A5D0DA3001ED77E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 473A21871A5D0DA3001ED77E /* appledoc.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DD76FA10486AA7600D96B5E;
+			remoteInfo = appledoc;
+		};
+		473A218E1A5D0DA3001ED77E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 473A21871A5D0DA3001ED77E /* appledoc.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 733EA125122BDD020060CBDE;
+			remoteInfo = AppledocTests;
+		};
+		473A21901A5D0DC0001ED77E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 473A21871A5D0DA3001ED77E /* appledoc.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DD76F960486AA7600D96B5E;
+			remoteInfo = appledoc;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -424,6 +460,7 @@
 		3C2D8EC10A63FF31008FE1B0 /* zh_TW */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; lineEnding = 0; name = zh_TW; path = zh_TW.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3C2D8EC20A63FF3B008FE1B0 /* fr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; lineEnding = 0; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3C2D8EC30A63FF41008FE1B0 /* da */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; lineEnding = 0; name = da; path = da.lproj/Localizable.strings; sourceTree = "<group>"; };
+		473A21871A5D0DA3001ED77E /* appledoc.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = appledoc.xcodeproj; path = appledoc/appledoc.xcodeproj; sourceTree = "<group>"; };
 		791E83030B0EDAC90060E5FC /* error.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = error.png; path = Resources/error.png; sourceTree = "<group>"; };
 		791E83040B0EDAC90060E5FC /* finished.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = finished.png; path = Resources/finished.png; sourceTree = "<group>"; };
 		7946B0FC0AC0F4A400CAE90F /* CKS3Connection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKS3Connection.h; sourceTree = "<group>"; };
@@ -602,7 +639,7 @@
 			isa = PBXGroup;
 			children = (
 				220526E8165E96AA00A2BBC9 /* CURLHandle.framework */,
-				279117E1178B5A86006BF857 /* CURLHandleTests.octest */,
+				279117E1178B5A86006BF857 /* CURLHandleTests.xctest */,
 				22C9CFFB1703AD4D004610FE /* Standalone Test */,
 			);
 			name = Products;
@@ -622,6 +659,7 @@
 		2280F4A4171826A500BBEF22 /* Documentation */ = {
 			isa = PBXGroup;
 			children = (
+				473A21871A5D0DA3001ED77E /* appledoc.xcodeproj */,
 				2280F4B41718276E00BBEF22 /* .appledoc.plist */,
 				2280F4B1171826D100BBEF22 /* Documentation */,
 			);
@@ -931,6 +969,15 @@
 			name = CK2OpenPanel;
 			sourceTree = "<group>";
 		};
+		473A21881A5D0DA3001ED77E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				473A218D1A5D0DA3001ED77E /* appledoc */,
+				473A218F1A5D0DA3001ED77E /* AppledocTests.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		79CFD8A009F705B400172CDD /* Private */ = {
 			isa = PBXGroup;
 			children = (
@@ -1136,6 +1183,9 @@
 					279117FA178B5C64006BF857 = {
 						TestTargetID = 79CFD12509F702BE00172CDD;
 					};
+					473A21831A5D0CD4001ED77E = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
 				};
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Connection" */;
@@ -1159,6 +1209,10 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = 473A21881A5D0DA3001ED77E /* Products */;
+					ProjectRef = 473A21871A5D0DA3001ED77E /* appledoc.xcodeproj */;
+				},
+				{
 					ProductGroup = 220526E3165E96AA00A2BBC9 /* Products */;
 					ProjectRef = 27BFFEDA15027F4100EFA319 /* CURLHandle.xcodeproj */;
 				},
@@ -1175,6 +1229,7 @@
 				27F3372716BC1FB100E70511 /* AuthTester */,
 				22C9CF971703327A004610FE /* ProfilingTester */,
 				279117FA178B5C64006BF857 /* ConnectionKitUITests */,
+				473A21831A5D0CD4001ED77E /* Documentation */,
 			);
 		};
 /* End PBXProject section */
@@ -1222,11 +1277,25 @@
 			remoteRef = 22C9CFFA1703AD4D004610FE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		279117E1178B5A86006BF857 /* CURLHandleTests.octest */ = {
+		279117E1178B5A86006BF857 /* CURLHandleTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
-			path = CURLHandleTests.octest;
+			path = CURLHandleTests.xctest;
 			remoteRef = 279117E0178B5A86006BF857 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		473A218D1A5D0DA3001ED77E /* appledoc */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = appledoc;
+			remoteRef = 473A218C1A5D0DA3001ED77E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		473A218F1A5D0DA3001ED77E /* AppledocTests.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = AppledocTests.app;
+			remoteRef = 473A218E1A5D0DA3001ED77E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -1309,6 +1378,19 @@
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
 			showEnvVarsInLog = 0;
+		};
+		473A21921A5D0DC3001ED77E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Build an Xcode documentation\necho \"SOURCE_ROOT : $SOURCE_ROOT/..\"\n[ -x \"$TARGET_BUILD_DIR/appledoc\" ] && \"$TARGET_BUILD_DIR/appledoc\" -p iTMDb -c 0rca.ch --company-id ch.0rca -h -i Classes/SBJson -i Tools/appledoc --no-create-docset -o \"$SOURCE_ROOT/Documentation\" \"$SOURCE_ROOT\" &> /dev/null\nexit 1";
 		};
 		797CBBEB09F854B60063FF9B /* Generate Localizable.strings */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1458,6 +1540,11 @@
 			isa = PBXTargetDependency;
 			target = 279117EA178B5C64006BF857 /* ConnectionKitUI */;
 			targetProxy = 279117FF178B5C64006BF857 /* PBXContainerItemProxy */;
+		};
+		473A21911A5D0DC0001ED77E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = appledoc;
+			targetProxy = 473A21901A5D0DC0001ED77E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1911,6 +1998,20 @@
 			};
 			name = Release;
 		};
+		473A21851A5D0CD5001ED77E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		473A21861A5D0CD5001ED77E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		79CFD12909F702BF00172CDD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -2062,6 +2163,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		473A21841A5D0CD5001ED77E /* Build configuration list for PBXAggregateTarget "Documentation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				473A21851A5D0CD5001ED77E /* Debug */,
+				473A21861A5D0CD5001ED77E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 		79CFD12809F702BF00172CDD /* Build configuration list for PBXNativeTarget "ConnectionKit" */ = {
 			isa = XCConfigurationList;

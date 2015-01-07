@@ -4,3 +4,6 @@
 [submodule "CurlHandle"]
 	path = CurlHandle
 	url = https://github.com/karelia/CurlHandle.git
+[submodule "appledoc"]
+	path = appledoc
+	url = https://github.com/sbausis/appledoc.git
