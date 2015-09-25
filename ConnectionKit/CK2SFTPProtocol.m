@@ -69,11 +69,19 @@
     [mutableRequest curl_setNewDirectoryPermissions:[attributes objectForKey:NSFilePosixPermissions]];
 
     NSString* path = [self.class pathOfURLRelativeToHomeDirectory:[request URL]];
-
-    NSString* command = [@"mkdir " stringByAppendingString:path];
-    self = [self initWithCustomCommands:[NSArray arrayWithObject:command]
+    
+    // Escape special characters in path so libcurl doesn't misinterpret them
+    // Needing to escape here for the compiler makes this very confusing to read, sorry! Gist is:
+    // Backslashes need to be escaped *first* as double backslashes so that:
+    // Quotes can be escaped with a backslash
+    // Then overall path is quoted so libcurl knows to treat spaces as part of the path
+    path = [path stringByReplacingOccurrencesOfString:@"\\" withString:@"\\\\"];
+    path = [path stringByReplacingOccurrencesOfString:@"\"" withString:@"\\\""];
+    NSString* command = [@"mkdir " stringByAppendingFormat:@"\"%@\"",path];
+    
+    self = [self initWithCustomCommands:@[command]
                                 request:mutableRequest
-          createIntermediateDirectories:createIntermediates
+          createIntermediateDirectories:NO  // rely on file operation to do this instead
                                  client:client
                       completionHandler:^(NSError *error) {
                           if (error)
@@ -100,11 +108,17 @@
     NSMutableURLRequest *mutableRequest = [request mutableCopy];
     [mutableRequest curl_setNewFilePermissions:[attributes objectForKey:NSFilePosixPermissions]];
     
-    if (self = [self initForCreatingFileWithRequest:mutableRequest size:size withIntermediateDirectories:createIntermediates client:client completionHandler:NULL])
+    if (self = [self initForCreatingFileWithRequest:mutableRequest
+                                               size:size
+                        withIntermediateDirectories:NO  // rely on file operation to do this instead
+                                             client:client
+                                  completionHandler:NULL])
     {
         NSString* path = [self.class pathOfURLRelativeToHomeDirectory:[request URL]];
         NSString* name = [path lastPathComponent];
         _transcriptMessage = [[NSString alloc] initWithFormat:@"Uploading %@ to %@\n", name, path];
+        
+        
     }
     
     [mutableRequest release];
